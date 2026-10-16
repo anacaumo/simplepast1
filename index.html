@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Game</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="purple">
+
+<div class="game-box">
+
+  <h1 id="title"></h1>
+
+  <!-- ===== SETUP SCREEN ===== -->
+  <div id="setup">
+    <h2>Set up your teams</h2>
+
+    <div class="field">
+      <label for="teamCount">Number of teams:</label>
+      <select id="teamCount"></select>
+    </div>
+
+    <div id="teamNames"></div>
+
+    <div class="field">
+      <label for="roundCount">Number of rounds:</label>
+      <select id="roundCount"></select>
+      <p id="planSummary" class="hint"></p>
+    </div>
+
+    <div class="field">
+      <label for="mode">Mode:</label>
+      <select id="mode">
+        <option value="chill">Chill (no timer, no bonus)</option>
+        <option value="challenge">Challenge</option>
+      </select>
+    </div>
+
+    <div id="challengeOptions" hidden>
+      <div class="field">
+        <label for="timeLimit">Time limit per question:</label>
+        <select id="timeLimit"></select>
+      </div>
+
+      <div class="field">
+        <label class="check">
+          <input type="checkbox" id="bonusOn" checked> Speed bonus
+        </label>
+      </div>
+
+      <div class="field" id="bonusWindowRow">
+        <label for="bonusWindow">Bonus if correct within:</label>
+        <select id="bonusWindow"></select>
+      </div>
+    </div>
+
+    <p id="rulesLine" class="hint"></p>
+    <p id="bankErrors" class="errors" hidden></p>
+
+    <button id="startBtn">Start Game</button>
+  </div>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <div id="game" hidden>
+    <div id="scoreboard"></div>
+
+    <p id="roundDisplay"></p>
+
+    <div id="timerBox" hidden>
+      <div class="timer-track" id="timerTrack"><div id="timerFill"></div></div>
+      <div class="timer-row">
+        <span id="timerText"></span>
+        <span id="bonusTag"></span>
+      </div>
+    </div>
+
+    <div class="dialogue-box">
+      <p id="typeLabel"></p>
+      <p id="situation"></p>
+    </div>
+
+    <div id="options"></div>
+
+    <div id="feedbackBox">
+      <p id="feedback"></p>
+    </div>
+
+    <button id="pauseBtn" hidden>Pause</button>
+    <button id="nextBtn">Next</button>
+    <button id="restartBtn" class="restart-btn">Restart Game</button>
+  </div>
+
+  <!-- ===== RANKING SCREEN ===== -->
+  <div id="ranking" hidden>
+    <div id="rankingList"></div>
+  </div>
+
+</div>
+
+<script src="questions.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
