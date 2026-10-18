@@ -41,10 +41,15 @@
      the fact ones  focus: "facts". True/false: a sentence with "labels"
      (CORRECT / INCORRECT) is grammar, a plain TRUE / FALSE statement is
      about facts. Keep TRUE and FALSE equal among the grammar ones too.
-   colloquial: true   (optional) the WRONG answer is something people really say
-     ("they was", "there was thousands of..."). The feedback then adds a short
-     note that it's normal in everyday speech but the game follows the book's
-     standard grammar. The note text is COLLOQUIAL_NOTE in game.js.
+   colloquial   (optional) used when a WRONG answer is something people really
+     say ("they was", "there was thousands of..."). The feedback then adds a
+     short note: normal in everyday speech, but the game follows the book's
+     standard grammar. The note appears ONLY for the team that fell for it,
+     so nobody is introduced to a mistake they didn't make.
+       multiple choice: colloquial: "was"   (the text of that wrong option)
+       true/false:      colloquial: true    (on a FALSE statement; the note shows
+                        when the team marks it CORRECT)
+     The note text is COLLOQUIAL_NOTE in game.js.
    "why" is the explanation shown when the feedback is revealed.
    ===================================================================== */
 
@@ -87,7 +92,7 @@ const MULTIPLE_CHOICE = [
     q: "In the 1970s, Tina Turner and Ike Turner ______ a famous duo.",
     options: ["was", "were", "is", "are"],
     answer: "were",
-    colloquial: true,
+    colloquial: "was",
     why: "Tina and Ike = they → WERE. “In the 1970s” é passado, então were (não are)."
   },
 
@@ -96,7 +101,7 @@ const MULTIPLE_CHOICE = [
     q: "Prince and Johnny Cash ______ Brazilian.",
     options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "weren't",
-    colloquial: true,
+    colloquial: "wasn't",
     why: "Prince and Johnny Cash = they → WEREN'T (were + not). Eles eram americanos."
   },
 
@@ -121,7 +126,7 @@ const MULTIPLE_CHOICE = [
     q: "Elis Regina and Rita Lee ______ born in Brazil.",
     options: ["was", "were", "did", "do"],
     answer: "were",
-    colloquial: true,
+    colloquial: "was",
     why: "Elis and Rita = they → WERE. “Born” pede be no passado: They were born."
   },
 
@@ -178,7 +183,7 @@ const MULTIPLE_CHOICE = [
     q: "Were Prince and Elton John singers? Yes, they ______.",
     options: ["were", "was", "did", "do"],
     answer: "were",
-    colloquial: true,
+    colloquial: "was",
     why: "A resposta curta repete o verbo da pergunta: Were...? → Yes, they WERE."
   },
 
@@ -197,7 +202,7 @@ const MULTIPLE_CHOICE = [
     q: "In the 1950s, in Dolly Parton's family, there ______ 12 children.",
     options: ["was", "were", "is", "are"],
     answer: "were",
-    colloquial: true,
+    colloquial: "was",
     why: "THERE + WERE + 2 ou mais coisas: 12 children → were. “In the 1950s” é passado (não are)."
   },
 
@@ -206,7 +211,7 @@ const MULTIPLE_CHOICE = [
     q: "In 1975, in the band Queen, there ______ four musicians.",
     options: ["was", "were", "is", "are"],
     answer: "were",
-    colloquial: true,
+    colloquial: "was",
     why: "THERE + WERE + 2 ou mais coisas: four musicians → were. “In 1975” é passado (não are)."
   },
 
@@ -231,7 +236,7 @@ const MULTIPLE_CHOICE = [
     q: "In 1985, there ______ thousands of people at Wembley.",
     options: ["was", "were", "is", "are"],
     answer: "were",
-    colloquial: true,
+    colloquial: "was",
     why: "THERE + WERE + várias coisas: thousands of people → were. “In 1985” é passado (não are)."
   },
 
@@ -240,7 +245,7 @@ const MULTIPLE_CHOICE = [
     q: "In the 1940s, there ______ 19 children in Tim Maia's family.",
     options: ["was", "were", "is", "are"],
     answer: "were",
-    colloquial: true,
+    colloquial: "was",
     why: "THERE + WERE + várias coisas: 19 children → were. “In the 1940s” é passado (não are)."
   },
 
@@ -283,7 +288,7 @@ const MULTIPLE_CHOICE = [
     q: "Rita Lee and Elis Regina ______ Argentinian.",
     options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "weren't",
-    colloquial: true,
+    colloquial: "wasn't",
     why: "Rita and Elis = they → WEREN'T (were + not). Elas eram brasileiras."
   },
 
@@ -308,7 +313,7 @@ const MULTIPLE_CHOICE = [
     q: "Were Prince and Johnny Cash Brazilian? No, they ______.",
     options: ["weren't", "wasn't", "didn't", "don't"],
     answer: "weren't",
-    colloquial: true,
+    colloquial: "wasn't",
     why: "Resposta curta negativa: No, they WEREN'T. Eles eram americanos."
   },
 
@@ -325,7 +330,7 @@ const MULTIPLE_CHOICE = [
     q: "Were Elton John and Bernie Taupin partners? Yes, they ______.",
     options: ["were", "was", "did", "do"],
     answer: "were",
-    colloquial: true,
+    colloquial: "was",
     why: "A resposta curta repete o verbo da pergunta: Were...? → Yes, they WERE."
   },
 
@@ -349,7 +354,7 @@ const MULTIPLE_CHOICE = [
     q: "______ Elis Regina and Rita Lee singers?",
     options: ["Were", "Was", "Did", "Do"],
     answer: "Were",
-    colloquial: true,
+    colloquial: "Was",
     why: "Pergunta com be: WERE + they/we/you + ...? Elis and Rita = they → Were Elis and Rita singers?"
   },
 

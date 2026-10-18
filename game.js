@@ -799,9 +799,16 @@ function validateBank() {
       problems.push(`${label}: "focus" must be "grammar" or "facts".`);
     }
   };
-  const checkColloquial = (q, label) => {
-    if (q.colloquial !== undefined && typeof q.colloquial !== "boolean") {
-      problems.push(`${label}: "colloquial" must be true or false.`);
+  // multiple choice: colloquial = the text of the everyday-speech option (a wrong one)
+  // true/false: colloquial = true, on a FALSE statement written the everyday way
+  const checkColloquial = (q, label, isTf) => {
+    if (q.colloquial === undefined) return;
+    if (isTf) {
+      if (q.colloquial !== true || q.answer !== false) {
+        problems.push(`${label}: "colloquial" on true/false must be true, and the statement must be false.`);
+      }
+    } else if (!q.options.includes(q.colloquial) || q.colloquial === q.answer) {
+      problems.push(`${label}: "colloquial" must be one of the WRONG options.`);
     }
   };
   const checkLevel = (q, label) => {
@@ -835,7 +842,7 @@ function validateBank() {
     if (!Array.isArray(q.topics) || q.topics.length === 0) problems.push(`${label}: missing "topics".`);
     checkLevel(q, label);
     checkFocus(q, label);
-    checkColloquial(q, label);
+    checkColloquial(q, label, false);
   });
 
   TRUE_FALSE.forEach((q, i) => {
@@ -853,7 +860,7 @@ function validateBank() {
     if (!q.why) problems.push(`${label}: missing "why".`);
     checkLevel(q, label);
     checkFocus(q, label);
-    checkColloquial(q, label);
+    checkColloquial(q, label, true);
   });
 
   return problems;
@@ -1428,7 +1435,10 @@ function resolveTurn({ choice = null, timedOut = false }) {
     bonus: Boolean(correct && bonusEarned),
     answerLine: correct ? "" : "Correct answer: " + turn.correctLabel,
     why: turn.data.why,
-    colloquial: Boolean(turn.data.colloquial)
+    // the note appears only for the team that picked the everyday-speech answer:
+    // multiple choice → they picked that very option; true/false → they accepted the sentence as correct
+    colloquial: Boolean(!timedOut && turn.data.colloquial &&
+      (turn.kind === "tf" ? !correct : choice === turn.data.colloquial))
   };
 
   const feedback = $("feedback");
