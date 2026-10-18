@@ -11,7 +11,16 @@
    - Fonts: --font-body and --font-display (and the <link> in index.html)
    ===================================================================== */
 
-/* the reading font, loaded from the file in this folder */
+/* the reading fonts, loaded from the files in this folder */
+@font-face {
+  font-family: 'VT323';
+  src: local('VT323'), local('VT323 Regular'), url('VT323-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  /* VT323 is drawn small: scale it up so letters are as big as DotGothic16's */
+  size-adjust: 140%;
+}
 @font-face {
   font-family: 'DotGothic16';
   src: local('DotGothic16'), local('DotGothic16 Regular'), url('DotGothic16-Regular.ttf') format('truetype');
@@ -21,11 +30,13 @@
 }
 
 :root {
-  /* DotGothic16 = clean pixel font for everything you read (the file
-     DotGothic16-Regular.ttf sits next to index.html, so it works offline).
-     If the file is missing the game falls back to Pixelify Sans (from Google Fonts).
+  /* VT323 = terminal-style pixel font for everything you read (the file
+     VT323-Regular.ttf sits next to index.html, so it works offline).
+     DotGothic16 is the backup: it also supplies the "→" arrow that VT323 doesn't have,
+     and takes over if the VT323 file is missing. Then Pixelify Sans (Google Fonts).
+     To go back to DotGothic16 alone, put 'DotGothic16' first in the list below.
      Press Start 2P = chunky arcade font, kept for the logo, buttons and scores. */
-  --font-body: 'DotGothic16', 'Pixelify Sans', 'Courier New', ui-monospace, monospace;
+  --font-body: 'VT323', 'DotGothic16', 'Pixelify Sans', 'Courier New', ui-monospace, monospace;
   --font-display: 'Press Start 2P', 'Courier New', ui-monospace, monospace;
 
   --fs-question: 2.3rem;
