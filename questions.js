@@ -148,7 +148,7 @@ const MULTIPLE_CHOICE = [
 
   {
     topics: ["cash-folsom"],
-    q: "In 1968, Johnny Cash ______ in Folsom Prison (inside a prison!).",
+    q: "In 1968, Johnny Cash ______ in Folsom Prison.",
     options: ["was", "were", "is", "are"],
     answer: "was",
     why: "Johnny Cash = he → WAS. “In 1968” é passado, então was (não is)."
