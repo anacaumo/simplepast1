@@ -409,6 +409,7 @@ function enhanceSelect(select) {
 function askConfirm(message, yesLabel, noLabel) {
   return new Promise((resolve) => {
     const modal = $("confirmModal");
+    if (!modal) { resolve(window.confirm(message)); return; } // page without the dialog markup
     const yes = $("confirmYes");
     const no = $("confirmNo");
     $("confirmText").textContent = message;
@@ -1035,6 +1036,8 @@ function initSetup() {
   document.title = GAME_TITLE;
   $("title").textContent = GAME_TITLE;
 
+  // always start on "Grammar only" (the browser may otherwise restore an old form value)
+  $("focusSelect").value = "grammar";
   document.querySelectorAll("#setup select").forEach(enhanceSelect);
 
   const teamCounts = [];
@@ -1076,15 +1079,24 @@ function initSetup() {
     event.preventDefault();
     rankingAdvance();
   });
-  // answer with the keyboard: A, B, C, D = the first, second, third, fourth answer
-  // (on a true/false question, A and B are the left and right buttons)
+  // answer with the keyboard: A, B, C, D = the first, second, third, fourth answer.
+  // On a true/false question: T = TRUE, F = FALSE (or C / I for CORRECT / INCORRECT);
+  // A and B also work there, as the left and right buttons.
   document.addEventListener("keydown", (event) => {
     if (event.repeat || event.ctrlKey || event.metaKey || event.altKey) return;
     if (state.phase !== "asking" || state.paused || !$("confirmModal").hidden) return;
     if (event.key.length !== 1) return;
-    const index = "abcd".indexOf(event.key.toLowerCase());
+    const key = event.key.toLowerCase();
+    const buttons = document.querySelectorAll("#options .option");
+    let index = "abcd".indexOf(key);
+    if (state.turn && state.turn.kind === "tf") {
+      // true/false: T / F, or the first letter of the labels (C / I for CORRECT / INCORRECT)
+      const byLetter = Array.from(buttons).findIndex((b) => b.dataset.label.toLowerCase().startsWith(key));
+      if (byLetter >= 0) index = byLetter;
+      else if (index > 1) return;
+    }
     if (index < 0) return;
-    const button = document.querySelectorAll("#options .option")[index];
+    const button = buttons[index];
     if (!button || button.disabled) return;
     event.preventDefault();
     button.click();

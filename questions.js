@@ -65,83 +65,83 @@ const MULTIPLE_CHOICE = [
   {
     topics: ["freddie-born-zanzibar"],
     q: "Freddie Mercury ______ born in Zanzibar.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    options: ["was", "were", "did", "do"],
     answer: "was",
-    why: "Freddie Mercury = he → WAS. A frase é afirmativa: ele nasceu em Zanzibar."
+    why: "Freddie Mercury = he → WAS. “Born” pede be no passado: He was born. (did / do não combinam com “born”.)"
   },
+
   {
     topics: ["ella-apollo-17", "verb-sang"],
     q: "Ella Fitzgerald ______ 17 years old when she sang at the Apollo Theater.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    options: ["was", "were", "is", "are"],
     answer: "was",
-    why: "Ella = she → WAS. Para idade, usamos be: She was 17 (ela tinha 17 anos)."
+    why: "Ella = she → WAS. Para idade, usamos be: She was 17. “Sang” está no passado, então was."
   },
+
   {
     topics: ["tina-ike-duo"],
-    q: "Tina Turner and Ike Turner ______ a famous duo.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    q: "In the 1970s, Tina Turner and Ike Turner ______ a famous duo.",
+    options: ["was", "were", "is", "are"],
     answer: "were",
-    why: "Tina and Ike = they → WERE. Eles eram uma dupla famosa."
+    why: "Tina and Ike = they → WERE. “In the 1970s” é passado, então were (não are)."
   },
+
   {
     topics: ["prince-cash-brazilian"],
-    prompt: "Complete with the NEGATIVE form. (Complete com a forma NEGATIVA.)",
     q: "Prince and Johnny Cash ______ Brazilian.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "weren't",
-    why: "Prince and Johnny Cash = they + forma NEGATIVA → WEREN'T (were + not)."
+    why: "Prince and Johnny Cash = they → WEREN'T (were + not). Eles eram americanos."
   },
+
   {
     topics: ["barbra-born", "chicago"],
-    prompt: "Complete with the NEGATIVE form. (Complete com a forma NEGATIVA.)",
     q: "Barbra Streisand ______ born in Chicago.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "wasn't",
-    why: "Barbra = she + forma NEGATIVA → WASN'T (was + not). Ela nasceu no Brooklyn, não em Chicago."
+    why: "Barbra = she → WASN'T (was + not). Ela nasceu no Brooklyn, não em Chicago."
   },
+
   {
     topics: ["dolly-9to5"],
     q: "In 1980, Dolly Parton ______ in the film “9 to 5”.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    options: ["was", "were", "is", "are"],
     answer: "was",
-    why: "Dolly Parton = she → WAS. Em 1980 ela estava no filme “9 to 5”."
+    why: "Dolly Parton = she → WAS. “In 1980” é passado, então was (não is)."
   },
+
   {
     topics: ["elis-rita-brazil"],
     q: "Elis Regina and Rita Lee ______ born in Brazil.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    options: ["was", "were", "did", "do"],
     answer: "were",
-    why: "Elis and Rita = they → WERE. As duas nasceram no Brasil."
+    why: "Elis and Rita = they → WERE. “Born” pede be no passado: They were born."
   },
+
   {
     topics: ["tim-born"],
-    prompt: "Complete with the NEGATIVE form. (Complete com a forma NEGATIVA.)",
     q: "Tim Maia ______ born in São Paulo.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "wasn't",
-    why: "Tim Maia = he + forma NEGATIVA → WASN'T (was + not). Ele nasceu no Rio de Janeiro (Tijuca)."
+    why: "Tim Maia = he → WASN'T (was + not). Ele nasceu no Rio de Janeiro (Tijuca)."
   },
+
   {
     topics: ["louis-trumpeter"],
-    q: "Louis Armstrong ______ a trumpeter and a singer.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    q: "In the 1950s, Louis Armstrong ______ a trumpeter and a singer.",
+    options: ["was", "were", "is", "are"],
     answer: "was",
-    why: "Louis Armstrong = he → WAS. Ele era trompetista e cantor."
+    why: "Louis Armstrong = he → WAS. “In the 1950s” é passado, então was (não is)."
   },
+
   {
     topics: ["cash-folsom"],
     q: "In 1968, Johnny Cash ______ in Folsom Prison (inside a prison!).",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    options: ["was", "were", "is", "are"],
     answer: "was",
-    why: "Johnny Cash = he → WAS. Em 1968 ele estava na prisão de Folsom, onde gravou um álbum."
+    why: "Johnny Cash = he → WAS. “In 1968” é passado, então was (não is)."
   },
+
 
   /* ---------- questions and short answers ---------- */
   {
@@ -161,83 +161,80 @@ const MULTIPLE_CHOICE = [
   {
     topics: ["louis-trumpeter"],
     q: "Was Louis Armstrong a trumpeter? Yes, he ______.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["was", "were", "did", "do"],
     answer: "was",
     why: "A resposta curta repete o verbo da pergunta: Was...? → Yes, he WAS."
   },
+
   {
     topics: ["prince-elton-singers"],
     q: "Were Prince and Elton John singers? Yes, they ______.",
-    options: ["were", "was", "weren't", "wasn't"],
+    options: ["were", "was", "did", "do"],
     answer: "were",
     why: "A resposta curta repete o verbo da pergunta: Were...? → Yes, they WERE."
   },
+
   {
     topics: ["tim-born"],
-    q: "Was Tim Maia born in São Paulo? No, he ______. (He was born in Rio.)",
-    options: ["wasn't", "weren't", "was", "were"],
+    q: "Was Tim Maia born in São Paulo? No, he ______.",
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "wasn't",
     why: "Resposta curta negativa: No, he WASN'T. Tim Maia nasceu no Rio de Janeiro."
   },
 
+
   /* ---------- there was / there were ---------- */
   {
     topics: ["dolly-12-kids", "family-size"],
-    q: "In Dolly Parton's family, there ______ 12 children.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    q: "In the 1950s, in Dolly Parton's family, there ______ 12 children.",
+    options: ["was", "were", "is", "are"],
     answer: "were",
-    why: "THERE + WERE + 2 ou mais coisas: 12 children → were."
+    why: "THERE + WERE + 2 ou mais coisas: 12 children → were. “In the 1950s” é passado (não are)."
   },
+
   {
     topics: ["queen-four"],
-    q: "In the band Queen, there ______ four musicians.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    q: "In 1975, in the band Queen, there ______ four musicians.",
+    options: ["was", "were", "is", "are"],
     answer: "were",
-    why: "THERE + WERE + 2 ou mais coisas: four musicians → were."
+    why: "THERE + WERE + 2 ou mais coisas: four musicians → were. “In 1975” é passado (não are)."
   },
+
   {
     topics: ["zanzibar-1964", "freddie-born-zanzibar"],
     q: "In 1964, there ______ a revolution in Zanzibar.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    options: ["was", "were", "is", "are"],
     answer: "was",
-    why: "THERE + WAS + 1 coisa: a revolution → was."
+    why: "THERE + WAS + 1 coisa: a revolution → was. “In 1964” é passado (não is)."
   },
+
   {
     topics: ["wembley-concert"],
     q: "In 1985, there ______ a huge concert at Wembley: Live Aid.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
+    options: ["was", "were", "is", "are"],
     answer: "was",
-    why: "THERE + WAS + 1 coisa: a huge concert → was."
-  },
-  {
-    topics: ["wembley-people"],
-    q: "There ______ thousands of people at Wembley.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
-    answer: "were",
-    why: "THERE + WERE + várias coisas: thousands of people → were."
-  },
-  {
-    topics: ["tim-19-kids", "family-size"],
-    q: "There ______ 19 children in Tim Maia's family.",
-    options: ["was", "were", "wasn't", "weren't"],
-    focus: "facts",
-    answer: "were",
-    why: "THERE + WERE + várias coisas: 19 children → were."
+    why: "THERE + WAS + 1 coisa: a huge concert → was. “In 1985” é passado (não is)."
   },
 
-  /* ---------- there / they / it ---------- */
   {
-    topics: ["queen-four"],
-    q: "Queen was a famous band. ______ were four musicians in it.",
-    options: ["There", "They", "It", "He"],
-    answer: "There",
-    why: "THERE + were = “havia”. THERE não é “they”! O verbo concorda com o que vem depois: four musicians."
+    topics: ["wembley-people"],
+    q: "In 1985, there ______ thousands of people at Wembley.",
+    options: ["was", "were", "is", "are"],
+    answer: "were",
+    why: "THERE + WERE + várias coisas: thousands of people → were. “In 1985” é passado (não are)."
   },
+
+  {
+    topics: ["tim-19-kids", "family-size"],
+    q: "In the 1940s, there ______ 19 children in Tim Maia's family.",
+    options: ["was", "were", "is", "are"],
+    answer: "were",
+    why: "THERE + WERE + várias coisas: 19 children → were. “In the 1940s” é passado (não are)."
+  },
+
+
+  /* ---------- there / they / it ---------- */
+
   {
     topics: ["wembley-people", "wembley-concert"],
     q: "There were thousands of people at Wembley. ______ were at the Live Aid concert.",
@@ -247,78 +244,84 @@ const MULTIPLE_CHOICE = [
   },
   {
     topics: ["g-elis-japan"],
-    prompt: "Complete with the NEGATIVE form. (Complete com a forma NEGATIVA.)",
     q: "Elis Regina ______ born in Japan.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "wasn't",
-    why: "Elis = she + forma NEGATIVA → WASN'T (was + not)."
+    why: "Elis = she → WASN'T (was + not). Ela nasceu em Porto Alegre."
   },
+
   {
     topics: ["g-freddie-brazilian"],
-    prompt: "Complete with the NEGATIVE form. (Complete com a forma NEGATIVA.)",
     q: "Freddie Mercury ______ a Brazilian singer.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "wasn't",
-    why: "Freddie Mercury = he + forma NEGATIVA → WASN'T (was + not)."
+    why: "Freddie Mercury = he → WASN'T (was + not)."
   },
+
   {
     topics: ["g-louis-guitarist"],
-    prompt: "Complete with the NEGATIVE form. (Complete com a forma NEGATIVA.)",
     q: "Louis Armstrong ______ a guitarist.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "wasn't",
-    why: "Louis Armstrong = he + forma NEGATIVA → WASN'T (was + not)."
+    why: "Louis Armstrong = he → WASN'T (was + not). Ele tocava trompete."
   },
+
   {
     topics: ["g-rita-elis-argentinian"],
-    prompt: "Complete with the NEGATIVE form. (Complete com a forma NEGATIVA.)",
     q: "Rita Lee and Elis Regina ______ Argentinian.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "weren't",
-    why: "Rita and Elis = they + forma NEGATIVA → WEREN'T (were + not)."
+    why: "Rita and Elis = they → WEREN'T (were + not). Elas eram brasileiras."
   },
+
   {
     topics: ["g-freddie-singer"],
     q: "Was Freddie Mercury a singer? Yes, he ______.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["was", "were", "did", "do"],
     answer: "was",
     why: "A resposta curta repete o verbo da pergunta: Was...? → Yes, he WAS."
   },
+
   {
     topics: ["g-elis-argentinian-q"],
     q: "Was Elis Regina Argentinian? No, she ______.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "wasn't",
     why: "Resposta curta negativa: No, she WASN'T. Elis Regina era brasileira."
   },
+
   {
     topics: ["prince-cash-brazilian"],
     q: "Were Prince and Johnny Cash Brazilian? No, they ______.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["weren't", "wasn't", "didn't", "don't"],
     answer: "weren't",
     why: "Resposta curta negativa: No, they WEREN'T. Eles eram americanos."
   },
+
   {
     topics: ["g-dolly-singer"],
     q: "Was Dolly Parton a singer? Yes, she ______.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["was", "were", "did", "do"],
     answer: "was",
     why: "A resposta curta repete o verbo da pergunta: Was...? → Yes, she WAS."
   },
+
   {
     topics: ["g-elton-taupin-partners"],
     q: "Were Elton John and Bernie Taupin partners? Yes, they ______.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["were", "was", "did", "do"],
     answer: "were",
     why: "A resposta curta repete o verbo da pergunta: Were...? → Yes, they WERE."
   },
+
   {
     topics: ["g-ella-trumpeter"],
     q: "Was Ella Fitzgerald a trumpeter? No, she ______.",
-    options: ["was", "were", "wasn't", "weren't"],
+    options: ["wasn't", "weren't", "didn't", "don't"],
     answer: "wasn't",
     why: "Resposta curta negativa: No, she WASN'T. Ela era cantora, não trompetista."
   },
+
   {
     topics: ["g-tim-maia-singer"],
     q: "______ Tim Maia a singer?",
@@ -333,13 +336,7 @@ const MULTIPLE_CHOICE = [
     answer: "Were",
     why: "Pergunta com be: WERE + they/we/you + ...? Elis and Rita = they → Were Elis and Rita singers?"
   },
-  {
-    topics: ["g-beatles-liverpool"],
-    q: "The Beatles were in Liverpool. ______ were four musicians in the band.",
-    options: ["There", "They", "It", "He"],
-    answer: "There",
-    why: "THERE + were = “havia”. THERE não é “they”! O verbo concorda com o que vem depois: four musicians."
-  },
+
   {
     topics: ["prince-elton-singers"],
     q: "Prince and Elton John were singers. ______ were famous in the 1980s.",
@@ -478,11 +475,12 @@ const MULTIPLE_CHOICE = [
   {
     topics: ["freddie-moved-england", "verb-moved"],
     level: 2,
-    q: "In 1964, Freddie Mercury's family ______ to England.",
+    q: "In 1964, Freddie Mercury ______ to England with his family.",
     options: ["moved", "move", "moveed", "moving"],
     answer: "moved",
-    why: "Verbo regular terminado em -e: move + d = MOVED. A família de Freddie se mudou para a Inglaterra."
+    why: "Move já termina em -e: só adicionamos -d → MOVED (passado, “In 1964”)."
   },
+
   {
     topics: ["queen-formed-1970", "rita-band", "verb-formed"],
     level: 2,
@@ -548,13 +546,14 @@ const MULTIPLE_CHOICE = [
     why: "Verbo regular: sign + ed = SIGNED. Em 1977 ele assinou um contrato com a Warner Bros. Records."
   },
   {
-    topics: ["queen-entered-2001", "verb-entered"],
+    topics: ["elton-hall-of-fame", "verb-entered"],
     level: 2,
-    q: "In 2001, Queen ______ the Rock and Roll Hall of Fame.",
+    q: "In 1994, Elton John ______ the Rock and Roll Hall of Fame.",
     options: ["entered", "enter", "enterd", "entering"],
     answer: "entered",
-    why: "Verbo regular: enter + ed = ENTERED. Em 2001 o Queen entrou no Rock and Roll Hall of Fame."
+    why: "Enter + ed = ENTERED (passado, “In 1994”)."
   },
+
   {
     topics: ["rita-studied-piano", "rita-parents", "verb-studied"],
     level: 2,
@@ -641,11 +640,12 @@ const MULTIPLE_CHOICE = [
   {
     topics: ["zanzibar-1964", "freddie-born-zanzibar", "verb-left"],
     level: 3,
-    q: "In 1964, Freddie Mercury's family ______ Zanzibar after a revolution.",
+    q: "In 1964, Freddie Mercury ______ Zanzibar after a revolution.",
     options: ["left", "leave", "leaved", "leaving"],
     answer: "left",
-    why: "Verbo irregular: leave → LEFT (não existe “leaved”). Em 1964 a família deixou Zanzibar."
+    why: "Leave é irregular: o passado é LEFT (“In 1964” = passado)."
   },
+
   {
     topics: ["louis-born", "verb-grew"],
     level: 3,

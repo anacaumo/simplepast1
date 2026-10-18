@@ -209,10 +209,56 @@ h1 {
   text-align: center;
   margin: 0.5rem 0 1.5rem;
   color: var(--coin);
+  /* outline + a SOLID drop (layers 0.05rem apart, so no hairline gaps show through) */
   text-shadow:
-    -0.2rem 0 0 var(--ink), 0.2rem 0 0 var(--ink), 0 -0.2rem 0 var(--ink), 0 0.2rem 0 var(--ink),
-    -0.2rem -0.2rem 0 var(--ink), 0.2rem -0.2rem 0 var(--ink), -0.2rem 0.2rem 0 var(--ink), 0.2rem 0.2rem 0 var(--ink),
-    0 0.55rem 0 var(--ink), 0.2rem 0.55rem 0 var(--ink), -0.2rem 0.55rem 0 var(--ink);
+    -0.2rem 0 0 var(--ink),
+    0.2rem 0 0 var(--ink),
+    0 -0.2rem 0 var(--ink),
+    0 0.2rem 0 var(--ink),
+    -0.2rem -0.2rem 0 var(--ink),
+    0.2rem -0.2rem 0 var(--ink),
+    -0.2rem 0.2rem 0 var(--ink),
+    0.2rem 0.2rem 0 var(--ink),
+    -0.2rem 0.2rem 0 var(--ink),
+    -0.1rem 0.2rem 0 var(--ink),
+    0 0.2rem 0 var(--ink),
+    0.1rem 0.2rem 0 var(--ink),
+    0.2rem 0.2rem 0 var(--ink),
+    -0.2rem 0.25rem 0 var(--ink),
+    -0.1rem 0.25rem 0 var(--ink),
+    0 0.25rem 0 var(--ink),
+    0.1rem 0.25rem 0 var(--ink),
+    0.2rem 0.25rem 0 var(--ink),
+    -0.2rem 0.3rem 0 var(--ink),
+    -0.1rem 0.3rem 0 var(--ink),
+    0 0.3rem 0 var(--ink),
+    0.1rem 0.3rem 0 var(--ink),
+    0.2rem 0.3rem 0 var(--ink),
+    -0.2rem 0.35rem 0 var(--ink),
+    -0.1rem 0.35rem 0 var(--ink),
+    0 0.35rem 0 var(--ink),
+    0.1rem 0.35rem 0 var(--ink),
+    0.2rem 0.35rem 0 var(--ink),
+    -0.2rem 0.4rem 0 var(--ink),
+    -0.1rem 0.4rem 0 var(--ink),
+    0 0.4rem 0 var(--ink),
+    0.1rem 0.4rem 0 var(--ink),
+    0.2rem 0.4rem 0 var(--ink),
+    -0.2rem 0.45rem 0 var(--ink),
+    -0.1rem 0.45rem 0 var(--ink),
+    0 0.45rem 0 var(--ink),
+    0.1rem 0.45rem 0 var(--ink),
+    0.2rem 0.45rem 0 var(--ink),
+    -0.2rem 0.5rem 0 var(--ink),
+    -0.1rem 0.5rem 0 var(--ink),
+    0 0.5rem 0 var(--ink),
+    0.1rem 0.5rem 0 var(--ink),
+    0.2rem 0.5rem 0 var(--ink),
+    -0.2rem 0.55rem 0 var(--ink),
+    -0.1rem 0.55rem 0 var(--ink),
+    0 0.55rem 0 var(--ink),
+    0.1rem 0.55rem 0 var(--ink),
+    0.2rem 0.55rem 0 var(--ink);
 }
 
 body[data-screen="game"] h1 { display: none; }
@@ -439,7 +485,7 @@ button:focus-visible, .team-input:focus {
 }
 
 /* flat pixel "play" arrow, takes the button's text colour */
-#startBtn::after, #nextBtn::after, #feedback.clickable::before {
+#nextBtn::after, #feedback.clickable::before {
   content: "";
   display: inline-block;
   width: 0.7em;
