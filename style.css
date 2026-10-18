@@ -10,10 +10,22 @@
    - Colours: the :root block
    - Fonts: --font-body and --font-display (and the <link> in index.html)
    ===================================================================== */
+
+/* the reading font, loaded from the file in this folder */
+@font-face {
+  font-family: 'DotGothic16';
+  src: local('DotGothic16'), local('DotGothic16 Regular'), url('DotGothic16-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* Pixelify Sans = pixel font that is still easy to read (everything you read).
+  /* DotGothic16 = clean pixel font for everything you read (the file
+     DotGothic16-Regular.ttf sits next to index.html, so it works offline).
+     If the file is missing the game falls back to Pixelify Sans (from Google Fonts).
      Press Start 2P = chunky arcade font, kept for the logo, buttons and scores. */
-  --font-body: 'Pixelify Sans', 'Courier New', ui-monospace, monospace;
+  --font-body: 'DotGothic16', 'Pixelify Sans', 'Courier New', ui-monospace, monospace;
   --font-display: 'Press Start 2P', 'Courier New', ui-monospace, monospace;
 
   --fs-question: 2.3rem;
